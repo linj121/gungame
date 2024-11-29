@@ -20,7 +20,7 @@
         src="https://img.shields.io/github/repo-size/linj121/gungame"
     />
     <img
-        src="https://img.shields.io/github/workflow/status/linj121/gungame/Compile%20and%20release"
+        src="https://img.shields.io/github/actions/workflow/status/linj121/gungame/main.yml"
     />
   </p>
 </div>
