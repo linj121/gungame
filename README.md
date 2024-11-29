@@ -43,3 +43,7 @@
 ## Usage ##
 
 Players will get a random primary weapon (or gnome and cola bottles) upon killing a zombie (common infected or all infected, based on cvar `sm_only_sp_infected`)
+
+## Docs ##
+
+- Get infected name: https://forums.alliedmods.net/showthread.php?t=302727
