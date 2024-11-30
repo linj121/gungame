@@ -9,7 +9,7 @@ public Plugin myinfo =
     name = "Gun Game",
     author = "Josh Lin",
     description = "Gain random weapons upon kills",
-    version = "0.0.3",
+    version = "0.0.4",
     url = "https://github.com/linj121/gungame"
 };
 
@@ -53,6 +53,16 @@ void OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
     bool attacker_is_bot = event.GetBool("attackerisbot");
     int attacker_entid = event.GetInt("attackerentid");
     if(!attacker || attacker_is_bot || attacker_entid)
+        return;
+
+    /**
+     * Filter damage type:
+     * Docs: https://developer.valvesoftware.com/wiki/Damage_types
+     * A damage could be consists of multiple damage types.
+     * Use bit-wise AND to detect desired type: https://forums.alliedmods.net/showthread.php?t=244205
+     */
+    int damage_type = event.GetInt("type");
+    if(damage_type & DMG_BURN)
         return;
 
     int attacker_client_id = GetClientOfUserId(attacker);
@@ -110,7 +120,7 @@ void OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
       //   "weapon_knife",
 
       // Special melee
-      "weapon_chainsaw",
+      //   "weapon_chainsaw",
 
       // Health and utility items
       //   "weapon_adrenaline",
