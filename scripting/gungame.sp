@@ -9,7 +9,7 @@ public Plugin myinfo =
     name = "Gun Game",
     author = "Josh Lin",
     description = "Gain random weapons upon kills",
-    version = "0.0.3",
+    version = "0.0.4",
     url = "https://github.com/linj121/gungame"
 };
 

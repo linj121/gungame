@@ -1,5 +1,12 @@
 # Release Notes
 
+## [0.0.4]
+
+### Added
+
+- Ignore burn damages (eg. molotov)
+- Remove chainsaw from random weapon pool to improve experience
+
 ## [0.0.3]
 
 ### Added
