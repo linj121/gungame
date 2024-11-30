@@ -55,6 +55,16 @@ void OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
     if(!attacker || attacker_is_bot || attacker_entid)
         return;
 
+    /**
+     * Filter damage type:
+     * Docs: https://developer.valvesoftware.com/wiki/Damage_types
+     * A damage could be consists of multiple damage types.
+     * Use bit-wise AND to detect desired type: https://forums.alliedmods.net/showthread.php?t=244205
+     */
+    int damage_type = event.GetInt("type");
+    if(damage_type & DMG_BURN)
+        return;
+
     int attacker_client_id = GetClientOfUserId(attacker);
 
     if(!IsClientInGame(attacker_client_id))
@@ -110,7 +120,7 @@ void OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
       //   "weapon_knife",
 
       // Special melee
-      "weapon_chainsaw",
+      //   "weapon_chainsaw",
 
       // Health and utility items
       //   "weapon_adrenaline",
